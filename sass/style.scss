@@ -28,14 +28,14 @@ body {
 .wrapper {
 	width: 400px;
 	padding: 20px;
-	background-color: rgba(34, 34, 34, 0.719);
-	color: rgb(252, 252, 252);
+	background-color: rgb(250, 250, 250);
+	color: #050505;
 	border-radius: 15px;
 }
 
 .header {
-	height: 80px;
-	margin-bottom: 30px;
+	height: 120px;
+	margin-bottom: 40px;
 	display: flex;
 	align-items: flex-end;
 	font-size: 28px;
@@ -53,14 +53,21 @@ body {
 
 	&__input {
 		width: 100%;
-		padding: 8px 4px;
+		padding: 8px;
 		font-size: 14px;
 		background: none;
 		border: none;
-		border: 1px solid #ffffff2d;
-		border-bottom: solid 2px #ffffffd7;
-		color: #ffffffd7;
+		border: 1px solid #d3d3d3;
+		border-bottom: solid 2px #bbbbbb;
+		border-radius: 5px;
+		color: #141414;
 		font-family: "Roboto", sans-serif;
+
+		&:focus {
+			outline: none;
+			border: 1px solid #292929;
+			border-bottom: solid 2px #1b1b1b;
+		}
 	}
 }
 
