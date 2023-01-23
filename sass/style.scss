@@ -9,6 +9,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-family: "Roboto", sans-serif;
 
 	background-image: url(../img/background.jpg);
 	background-size: cover;
@@ -25,8 +26,55 @@ body {
 }
 
 .wrapper {
-	width: 440px;
-	padding: 40px;
-	background-color: rgba(34, 34, 34, 0.274);
+	width: 400px;
+	padding: 20px;
+	background-color: rgba(34, 34, 34, 0.719);
+	color: rgb(252, 252, 252);
 	border-radius: 15px;
+}
+
+.header {
+	height: 80px;
+	margin-bottom: 30px;
+	display: flex;
+	align-items: flex-end;
+	font-size: 28px;
+}
+
+.form-box {
+	padding: 0 20px;
+	margin-bottom: 15px;
+	font-size: 16px;
+
+	&__label {
+		display: inline-block;
+		margin-bottom: 5px;
+	}
+
+	&__input {
+		width: 100%;
+		padding: 8px 4px;
+		font-size: 14px;
+		background: none;
+		border: none;
+		border: 1px solid #ffffff2d;
+		border-bottom: solid 2px #ffffffd7;
+		color: #ffffffd7;
+		font-family: "Roboto", sans-serif;
+	}
+}
+
+.control-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: right;
+	margin-top: 30px;
+	margin-right: 20px;
+
+	&__btn {
+		margin-left: 20px;
+		padding: 5px 20px;
+		font-family: "Roboto", sans-serif;
+		cursor: pointer;
+	}
 }
