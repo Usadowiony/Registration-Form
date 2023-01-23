@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-image: url(../img/background.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.github-ico {
+	position: absolute;
+	bottom: 2vh;
+	right: 4vw;
+	color: #ffffffd7;
+	font-size: 40px;
+	text-shadow: 3px 3px 6px #0a0a0aec;
+}
+
+.wrapper {
+	width: 440px;
+	padding: 40px;
+	background-color: rgba(34, 34, 34, 0.274);
+	border-radius: 15px;
+}
