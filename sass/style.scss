@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap");
+
+$main-color: #023e8a;
+$subsidiary-color: #7894a1;
+$white-color: rgb(250, 250, 250);
+$black-color: rgb(15, 15, 15);
 
 * {
 	margin: 0;
@@ -11,8 +16,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-family: 'Source Sans Pro', sans-serif;
-	background-color: rgb(245, 245, 245);
+	font-family: "Source Sans Pro", sans-serif;
 
 	background-image: url(../img/background.jpg);
 	background-size: cover;
@@ -31,8 +35,8 @@ body {
 .wrapper {
 	width: 400px;
 	padding: 20px;
-	background-color: #ffffff;
-	color: #050505;
+	background-color: $white-color;
+	color: $black-color;
 	border-radius: 15px;
 	box-shadow: 0 0 10px rgba(34, 34, 34, 0.336);
 }
@@ -43,13 +47,15 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-direction: column ;
+	flex-direction: column;
 
-	&__h1{
+	&__h1 {
 		font-size: 28px;
 		margin-bottom: 5px;
+		color: $main-color;
 	}
-	&__h2{
+	&__h2 {
+		color: $subsidiary-color;
 		font-size: 16px;
 		font-weight: 300;
 	}
@@ -73,30 +79,30 @@ body {
 		border: none;
 		border: 1.5px solid #d3d3d3;
 		border-radius: 5px;
-		color: #141414;
-		font-family: 'Source Sans Pro', sans-serif;
+		color: $black-color;
+		font-family: "Source Sans Pro", sans-serif;
 
 		&:focus {
 			outline: none;
-			border: 1.5px solid #292929;
+			border: 1.5px solid $black-color;
 		}
 	}
 
-	&--password{
+	&--password {
 		position: relative;
 
-		.form-box__input{
+		.form-box__input {
 			padding-right: 38px;
 		}
 	}
 
-	&__icon{
-		font-size: 20px;
-		font-weight: 300;
+	&__icon {
 		position: absolute;
-		right: 30px;
-		top: 33px;
-		// background-color: rgb(56, 56, 56);
+		right: 32px;
+		top: 35px;
+		font-size: 18px;
+		font-weight: 300;
+		color: $black-color;
 		cursor: pointer;
 	}
 }
@@ -110,8 +116,23 @@ body {
 
 	&__btn {
 		margin-left: 20px;
-		padding: 5px 20px;
-		font-family: 'Source Sans Pro', sans-serif;
+		padding: 6px 20px;
+		font-family: "Source Sans Pro", sans-serif;
+		font-weight: 600;
+		border-radius: 6px;
 		cursor: pointer;
+
+		&--clear {
+			width: 80px;
+			border: 2.5px solid $main-color;
+			background: none;
+			color: $main-color;
+		}
+		&--register {
+			width: 120px;
+			background-color: $main-color;
+			border: 2.5px solid $main-color;
+			color: $white-color;
+		}
 	}
 }
