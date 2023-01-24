@@ -56,14 +56,15 @@ body {
 	}
 	&__h2 {
 		color: $subsidiary-color;
-		font-size: 16px;
+		font-size: 18px;
+		letter-spacing: -0.5px;
 		font-weight: 300;
 	}
 }
 
 .form-box {
 	padding: 0 20px;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	font-size: 16px;
 
 	&__label {
@@ -104,6 +105,29 @@ body {
 		font-weight: 300;
 		color: $black-color;
 		cursor: pointer;
+	}
+
+	&__error-text {
+		visibility: hidden;
+		font-size: 14px;
+		margin-top: 4px;
+		margin-left: 4px;
+	}
+
+	&--error {
+		color: $main-color;
+
+		.form-box__error-text {
+			visibility: visible;
+		}
+		.form-box__input {
+			border: 1.5px solid $main-color;
+
+			&:focus {
+				outline: none;
+				border: 1.5px solid $main-color;
+			}
+		}
 	}
 }
 
