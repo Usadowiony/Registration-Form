@@ -74,12 +74,30 @@ body {
 		border: 1.5px solid #d3d3d3;
 		border-radius: 5px;
 		color: #141414;
-		font-family: "Roboto", sans-serif;
+		font-family: 'Source Sans Pro', sans-serif;
 
 		&:focus {
 			outline: none;
 			border: 1.5px solid #292929;
 		}
+	}
+
+	&--password{
+		position: relative;
+
+		.form-box__input{
+			padding-right: 38px;
+		}
+	}
+
+	&__icon{
+		font-size: 20px;
+		font-weight: 300;
+		position: absolute;
+		right: 30px;
+		top: 33px;
+		// background-color: rgb(56, 56, 56);
+		cursor: pointer;
 	}
 }
 
@@ -93,7 +111,7 @@ body {
 	&__btn {
 		margin-left: 20px;
 		padding: 5px 20px;
-		font-family: "Roboto", sans-serif;
+		font-family: 'Source Sans Pro', sans-serif;
 		cursor: pointer;
 	}
 }
