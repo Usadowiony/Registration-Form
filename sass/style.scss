@@ -146,18 +146,30 @@ body {
 		font-weight: 600;
 		border-radius: 6px;
 		cursor: pointer;
+		transition: 0.3s;
 
 		&--clear {
 			width: 80px;
 			border: 2.5px solid $main-color;
 			background: none;
 			color: $main-color;
+
+			&:hover {
+				border: 2.5px solid $subsidiary-color;
+				color: $subsidiary-color;
+			}
 		}
 		&--register {
 			width: 120px;
 			background-color: $main-color;
 			border: 2.5px solid $main-color;
 			color: $white-color;
+
+			&:hover {
+				border: 2.5px solid $main-color;
+				background: none;
+				color: $main-color;
+			}
 		}
 	}
 }
