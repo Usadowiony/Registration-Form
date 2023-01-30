@@ -114,6 +114,14 @@ body {
 		margin-top: 4px;
 		margin-left: 4px;
 	}
+	&__terms-error-text {
+		visibility: hidden;
+		margin-top: 10px;
+		margin-left: 4px;
+		font-size: 14px;
+		font-weight: bold;
+		font-style: italic;
+	}
 
 	&--error {
 		color: $main-color;
@@ -129,10 +137,14 @@ body {
 				border: 1.5px solid $main-color;
 			}
 		}
+		.form-box__terms-error-text {
+			visibility: visible;
+		}
 	}
 
 	&--terms {
 		position: relative;
+		margin-top: 10px;
 	}
 
 	&__terms-checkbox {
@@ -141,7 +153,6 @@ body {
 		left: 20px;
 		height: 20px;
 		width: 20px;
-		color: $main-color;
 	}
 
 	&__terms-p {
@@ -156,7 +167,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: right;
-	margin-top: 30px;
+	margin-top: 15px;
 	margin-right: 20px;
 
 	&__btn {
