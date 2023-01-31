@@ -1,0 +1,53 @@
+.control-buttons {
+	&__btn {
+		transition: 0.3s;
+
+		&--clear {
+			&:hover {
+				border: 2.5px solid $subsidiary-color;
+				color: $subsidiary-color;
+			}
+		}
+		&--register {
+			&:hover {
+				border: 2.5px solid $main-color;
+				background: none;
+				color: $main-color;
+			}
+		}
+	}
+}
+
+.form-box {
+    &__input{
+        &:focus,
+        &:valid{
+			outline: none;
+			border: 1.5px solid $main-color;
+		}
+    }
+}
+.form-box .form-box__input:focus ~ .form-box__label,
+.form-box .form-box__input:valid ~ .form-box__label{
+    left: 12px;
+    top: -6px;
+    padding: 0 2px;
+    font-size: 10px;
+    font-weight: 900;
+    color: $main-color;
+    background-color: $white-color;
+    border-left: 1.5px solid $main-color;
+    border-right: 1.5px solid $main-color;
+}
+
+#username:focus ~ .form-box__label,
+#username:valid ~ .form-box__label{
+    color: $white-color;
+    background-color: $main-color;
+    border-radius: 3px;
+}
+
+.form-box--password .form-box__input:focus ~ .form-box__icon,
+.form-box--password .form-box__input:valid ~ .form-box__icon{
+    color: $main-color;
+}

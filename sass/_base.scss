@@ -1,10 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap");
-
-$main-color: #023e8a;
-$subsidiary-color: #7894a1;
-$white-color: rgb(250, 250, 250);
-$black-color: rgb(15, 15, 15);
-
 * {
 	margin: 0;
 	padding: 0;
@@ -63,31 +56,32 @@ body {
 }
 
 .form-box {
+	position: relative;
 	padding: 0 20px;
-	margin-bottom: 2px;
+	margin-bottom: 8px;
 	font-size: 16px;
 
 	&__label {
-		display: inline-block;
-		margin-bottom: 5px;
-		margin-left: 2px;
+		transition: 0.3s;
+		position: absolute;
+		left: 0;
+		padding: 10px 8px;
+		margin-left: 24px;
+		color: $subsidiary-color;
+		pointer-events: none;
 	}
 
 	&__input {
+		transition: 0.3s;
 		width: 100%;
-		padding: 8px;
-		font-size: 14px;
+		padding: 10px;
+		font-size: 16px;
 		background: none;
 		border: none;
-		border: 1.5px solid #d3d3d3;
+		border: 1.5px solid $subsidiary-color;
 		border-radius: 5px;
 		color: $black-color;
 		font-family: "Source Sans Pro", sans-serif;
-
-		&:focus {
-			outline: none;
-			border: 1.5px solid $black-color;
-		}
 	}
 
 	&--password {
@@ -99,19 +93,20 @@ body {
 	}
 
 	&__icon {
+		transition: 0.3s;
 		position: absolute;
+		top: 12px;
 		right: 32px;
-		top: 35px;
-		font-size: 18px;
+		font-size: 20px;
 		font-weight: 300;
-		color: $black-color;
+		color: $subsidiary-color;
 		cursor: pointer;
 	}
 
 	&__error-text {
 		visibility: hidden;
 		font-size: 14px;
-		margin-top: 4px;
+		margin-top: px;
 		margin-left: 4px;
 	}
 	&__terms-error-text {
@@ -124,22 +119,34 @@ body {
 	}
 
 	&--error {
-		color: $main-color;
+		color: $error-color;
 
 		.form-box__error-text {
 			visibility: visible;
 		}
 		.form-box__input {
-			border: 1.5px solid $main-color;
+			border: 1.5px solid $error-color;
 
 			&:focus {
 				outline: none;
-				border: 1.5px solid $main-color;
+				border: 1.5px solid $error-color;
 			}
+
 		}
 		.form-box__terms-error-text {
 			visibility: visible;
 		}
+        .form-box__icon,
+        .form-box__input:focus ~ .form-box__icon,
+        .form-box__input:valid ~ .form-box__icon{
+			color: $error-color;
+		}
+        .form-box__input:focus ~ .form-box__label,
+        .form-box__input:valid ~ .form-box__label{
+            color: $error-color;
+            border-left: 1.5px solid $error-color;
+            border-right: 1.5px solid $error-color;
+        }
 	}
 
 	&--terms {
@@ -177,30 +184,18 @@ body {
 		font-weight: 600;
 		border-radius: 6px;
 		cursor: pointer;
-		transition: 0.3s;
 
 		&--clear {
 			width: 80px;
 			border: 2.5px solid $main-color;
 			background: none;
 			color: $main-color;
-
-			&:hover {
-				border: 2.5px solid $subsidiary-color;
-				color: $subsidiary-color;
-			}
 		}
 		&--register {
 			width: 120px;
 			background-color: $main-color;
 			border: 2.5px solid $main-color;
 			color: $white-color;
-
-			&:hover {
-				border: 2.5px solid $main-color;
-				background: none;
-				color: $main-color;
-			}
 		}
 	}
 }
