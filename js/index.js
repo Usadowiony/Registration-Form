@@ -39,17 +39,22 @@ const termsError = () => {
 	}
 };
 
-const checkLength = (input, min) => {
-	if (input.value.length < min) {
-		const label = input.nextElementSibling.textContent.slice(0, -1);
-		errorMsg(input, `${label} should contain at least ${min} characters`
-		);
-	}
-};
-
 const checkEmpty = el => {
 	emptyInputError(el);
 	termsError();
+};
+
+const checkLength = (input, min) => {
+	if (input.value.length < min) {
+		const label = input.nextElementSibling.textContent.slice(0, -1);
+		errorMsg(input, `${label} should contain at least ${min} characters!`);
+	}
+};
+
+const checkPassword = (pas1, pas2) => {
+	if (pas1.value !== pas2.value) {
+		errorMsg(pas2, "Those passwords didn’t match!");
+	}
 };
 
 registerBtn.addEventListener("click", e => {
@@ -58,6 +63,7 @@ registerBtn.addEventListener("click", e => {
 	checkEmpty([username, email, password1, password2]);
 	checkLength(username, 3);
 	checkLength(password1, 8);
+	checkPassword(password1, password2);
 });
 
 clearBtn.addEventListener("click", e => {
