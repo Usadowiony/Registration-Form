@@ -53,7 +53,7 @@ const checkLength = (input, min) => {
 
 const checkEmail = email => {
 	const re =
-	/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/;
+		/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/;
 
 	if (re.test(email.value)) {
 		return;
@@ -68,6 +68,29 @@ const checkPassword = (pas1, pas2) => {
 	}
 };
 
+const checkErrors = () => {
+	let errorCount = 0;
+
+	formBoxes.forEach(e => {
+		if (e.classList.contains("form-box--error")) {
+			errorCount++;
+		}
+	});
+	if (errorCount === 0) {
+		alert("SUCCES!");
+
+		//reset to default
+		[username, email, password1, password2].forEach(e => {
+			e.value = "";
+		});
+		terms.checked = false;
+		formBoxes.forEach(e => {
+		e.value = ""
+		e.classList.remove("form-box--error");
+	});
+	}
+};
+
 registerBtn.addEventListener("click", e => {
 	e.preventDefault();
 
@@ -76,6 +99,7 @@ registerBtn.addEventListener("click", e => {
 	checkLength(password1, 8);
 	checkEmail(email);
 	checkPassword(password1, password2);
+	checkErrors();
 });
 
 clearBtn.addEventListener("click", e => {
