@@ -147,6 +147,12 @@ body {
             border-left: 1.5px solid $error-color;
             border-right: 1.5px solid $error-color;
         }
+		#username:focus ~ .form-box__label,
+		#username:valid ~ .form-box__label{
+    	color: $white-color;
+    	background-color: $error-color;
+   		 border-radius: 3px;
+}
 	}
 
 	&--terms {
