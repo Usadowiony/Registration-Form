@@ -82,6 +82,9 @@ body {
 		border-radius: 5px;
 		color: $black-color;
 		font-family: "Source Sans Pro", sans-serif;
+		&::placeholder{
+			color: $white-color;
+		}
 	}
 
 	&--password {
@@ -151,7 +154,7 @@ body {
 		#username:valid ~ .form-box__label{
     	color: $white-color;
     	background-color: $error-color;
-   		 border-radius: 3px;
+   		border-radius: 3px;
 }
 	}
 

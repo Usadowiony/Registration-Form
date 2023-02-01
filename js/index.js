@@ -9,11 +9,13 @@ const registerBtn = document.querySelector(".control-buttons__btn--register");
 
 const formBoxes = document.querySelectorAll(".form-box");
 
-const inputError = input => {
+const emptyInputError = (input) => {
 	input.forEach(e => {
 		if (e.value === "") {
 			const formBox = e.parentElement;
+			const errorMsg = formBox.querySelector(".form-box__error-text");
 			formBox.classList.add("form-box--error");
+			errorMsg.textContent = e.placeholder;
 		} else {
 			const formBox = e.parentElement;
 			formBox.classList.remove("form-box--error");
@@ -31,8 +33,8 @@ const termsError = () => {
 	}
 };
 
-const checkForm = input => {
-	inputError(input);
+const checkForm = el => {
+	emptyInputError(el);
 	termsError();
 };
 
