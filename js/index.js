@@ -11,13 +11,17 @@ const eyeBtns = [
 	password2.parentElement.querySelector(".form-box__icon"),
 ];
 
+const errorMsg = (el, msg) => {
+	const formBox = el.parentElement;
+	formBox.classList.add("form-box--error");
+	const errorP = el.parentElement.querySelector(".form-box__error-text");
+	errorP.textContent = msg;
+};
+
 const emptyInputError = input => {
 	input.forEach(e => {
 		if (e.value === "") {
-			const formBox = e.parentElement;
-			const errorMsg = formBox.querySelector(".form-box__error-text");
-			formBox.classList.add("form-box--error");
-			errorMsg.textContent = e.placeholder;
+			errorMsg(e, e.placeholder);
 		} else {
 			const formBox = e.parentElement;
 			formBox.classList.remove("form-box--error");
@@ -35,7 +39,15 @@ const termsError = () => {
 	}
 };
 
-const checkForm = el => {
+const checkLength = (input, min) => {
+	if (input.value.length < min) {
+		const label = input.nextElementSibling.textContent.slice(0, -1);
+		errorMsg(input, `${label} should contain at least ${min} characters`
+		);
+	}
+};
+
+const checkEmpty = el => {
 	emptyInputError(el);
 	termsError();
 };
@@ -43,7 +55,9 @@ const checkForm = el => {
 registerBtn.addEventListener("click", e => {
 	e.preventDefault();
 
-	checkForm([username, email, password1, password2]);
+	checkEmpty([username, email, password1, password2]);
+	checkLength(username, 3);
+	checkLength(password1, 8);
 });
 
 clearBtn.addEventListener("click", e => {
