@@ -51,6 +51,17 @@ const checkLength = (input, min) => {
 	}
 };
 
+const checkEmail = email => {
+	const re =
+	/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/;
+
+	if (re.test(email.value)) {
+		return;
+	} else {
+		errorMsg(email, "Invalid email!");
+	}
+};
+
 const checkPassword = (pas1, pas2) => {
 	if (pas1.value !== pas2.value) {
 		errorMsg(pas2, "Those passwords didn’t match!");
@@ -63,6 +74,7 @@ registerBtn.addEventListener("click", e => {
 	checkEmpty([username, email, password1, password2]);
 	checkLength(username, 3);
 	checkLength(password1, 8);
+	checkEmail(email);
 	checkPassword(password1, password2);
 });
 
