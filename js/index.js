@@ -3,13 +3,15 @@ const email = document.querySelector("#email");
 const password1 = document.querySelector("#password1");
 const password2 = document.querySelector("#password2");
 const terms = document.querySelector("#terms");
-
 const clearBtn = document.querySelector(".control-buttons__btn--clear");
 const registerBtn = document.querySelector(".control-buttons__btn--register");
-
 const formBoxes = document.querySelectorAll(".form-box");
+const eyeBtns = [
+	password1.parentElement.querySelector(".form-box__icon"),
+	password2.parentElement.querySelector(".form-box__icon"),
+];
 
-const emptyInputError = (input) => {
+const emptyInputError = input => {
 	input.forEach(e => {
 		if (e.value === "") {
 			const formBox = e.parentElement;
@@ -52,5 +54,21 @@ clearBtn.addEventListener("click", e => {
 	terms.checked = false;
 	formBoxes.forEach(e => {
 		e.classList.remove("form-box--error");
+	});
+});
+
+eyeBtns.forEach(e => {
+	e.addEventListener("click", () => {
+		eyeBtns.forEach(el => {
+			el.classList.toggle("fa-eye");
+			el.classList.toggle("fa-eye-slash");
+		});
+		if (password1.type === "password") {
+			password1.type = "text";
+			password2.type = "text";
+		} else {
+			password1.type = "password";
+			password2.type = "password";
+		}
 	});
 });
