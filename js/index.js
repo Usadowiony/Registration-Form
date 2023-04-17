@@ -85,9 +85,9 @@ const checkErrors = () => {
 		});
 		terms.checked = false;
 		formBoxes.forEach(e => {
-		e.value = ""
-		e.classList.remove("form-box--error");
-	});
+			e.value = "";
+			e.classList.remove("form-box--error");
+		});
 	}
 };
 
