@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-# 📋 Bill Splitter
+# 📋 Registration form
 
 <br />
   <p>
